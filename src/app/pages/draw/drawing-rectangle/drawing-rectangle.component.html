@@ -1,0 +1,44 @@
+<div
+  fxLayout="row"
+  fxLayout.xs="column"
+  fxLayout.sm="column"
+  fxLayout.md="column"
+  fxLayoutAlign="space-evenly start"
+>
+  <div fxFlex="50" class="bot">
+    <svg width="500" height="500" class="svgBack">
+      <rect
+        [attr.x]="data.x"
+        [attr.y]="data.y"
+        [attr.width]="data.width"
+        [attr.height]="data.height"
+        [attr.rx]="data.rx"
+        [attr.ry]="data.ry"
+        class="svgInd"
+        #box
+      ></rect>
+    </svg>
+    <div class="resize-action" (mousedown)="setStatus($event, 1)"></div>
+  </div>
+
+  <div fxFlex="50" class="example-card">
+    <div class="cs">
+      <div class="paramLeft">
+        <span>X-axis</span>
+        <span>Y-axis</span>
+        <span>Width</span>
+        <span>Height</span>
+        <span>X-radius</span>
+        <span>Y-radius</span>
+      </div>
+      <div class="paramRight">
+        <span>: {{ data?.x }}</span>
+        <span>: {{ data?.y }}</span>
+        <span>: {{ data?.width }}</span>
+        <span>: {{ data?.height }}</span>
+        <span>: {{ data?.rx }}</span>
+        <span>: {{ data?.ry }}</span>
+      </div>
+    </div>
+  </div>
+</div>
